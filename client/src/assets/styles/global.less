@@ -1,0 +1,31 @@
+@import './definition.less';
+@import './roboto.less';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: @regular;
+  background-color: @main-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.25s;
+}
+
+.page-fade-enter-active, .page-fade-leave-active {
+  transition: opacity 0.33s;
+}
+
+.page-fade-enter, .page-fade-leave-active, .fade-enter, .fade-leave-active {
+  opacity: 0;
+}
