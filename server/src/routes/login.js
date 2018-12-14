@@ -24,9 +24,9 @@ router.get('login', async (ctx, next) => {
 
     if (result.data) {
       const newToken = jwt.sign({}, config.secret, { expiresIn: '7 days' })
-      ctx.redirect(`https://iszu.cn/board/${id || ''}?token=${newToken}`)
+      ctx.redirect(`${config.root}/board/${id || ''}?token=${newToken}`)
     } else throw new ForbiddenError()
-  } else ctx.redirect(`https://szupu.szu.edu.cn/cas/login?redirect=${encodeURIComponent(`https://iszu.cn${ctx.originalUrl}`)}`)
+  } else ctx.redirect(`https://szupu.szu.edu.cn/cas/login?redirect=${encodeURIComponent(`${config.root}${ctx.originalUrl}`)}`)
 
   return next()
 })
