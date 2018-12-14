@@ -1,7 +1,7 @@
 'use strict'
 
 const board = require('./lib/board')
-const Article = require('../../server/src/models/Article')
+const Article = require('../../server/src/models/article')
 const schedule = require('node-schedule')
 
 const lectureRegex = /讲座|学术报告/
