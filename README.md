@@ -5,6 +5,6 @@
 config -> server/src/config.js
 
 ## run
-> server/bin/www
+server/bin/www
 
-> spider/src/index.js
+spider/src/index.js
