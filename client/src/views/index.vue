@@ -19,7 +19,8 @@
   import articleItem from 'components/article-item'
   import { filterLabel } from 'scripts/util'
   import { initWechatJsapi, wechatJsapi } from 'scripts/wechat'
-
+  import config from '../../../server/src/config'
+  
   export default {
     components: {
       searchBox,
@@ -43,7 +44,7 @@
       loadingStateText () {
         if (this.loadingState === 'loading') return 'ε=ε=ε=(~￣▽￣)~ 嘿咻嘿咻…'
         else if (this.loadingState === 'end') return '没有喽 ~(～￣▽￣)～'
-        else if (this.loadingState === 'error') return '正在等待<a href="https://iszu.cn/board/api/login" style="color: white !important; text-decoration: underline">校园卡登录</a>完成...请稍候'
+        else if (this.loadingState === 'error') return '正在等待<a href="/board/api/login" style="color: white !important; text-decoration: underline">校园卡登录</a>完成...请稍候'
       }
     },
     methods: {
@@ -119,7 +120,7 @@
 
           wx.onMenuShareTimeline({
             title: '深圳大学校园公文通【深大官微】',
-            link: 'https://iszu.cn/board',
+            link: `${config.root}/board`,
             imgUrl,
             success: () => ga('send', 'event', 'board', 'share', 'timeline')
           })
@@ -127,7 +128,7 @@
           wx.onMenuShareAppMessage({
             title: '深圳大学校园公文通',
             desc: '深大官微',
-            link: 'https://iszu.cn/board',
+            link: `${config.root}/board`,
             imgUrl,
             success: () => ga('send', 'event', 'board', 'share', 'app-message')
           })
@@ -135,7 +136,7 @@
           wx.onMenuShareQQ({
             title: '深圳大学校园公文通',
             desc: '深大官微',
-            link: 'https://iszu.cn/board',
+            link: `${config.root}/board`,
             imgUrl,
             success: () => ga('send', 'event', 'board', 'share', 'qq')
           })

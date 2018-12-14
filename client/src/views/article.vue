@@ -65,6 +65,7 @@
   import differenceWith from 'lodash/differenceWith'
   import { initWechatJsapi, wechatJsapi } from 'scripts/wechat'
   import { articleTypeLookup, formatDateTime } from 'scripts/util'
+  import config from '../../../server/src/config'
 
   const emptyArticle = () => ({
     title: '正在加载...',
@@ -154,14 +155,14 @@
 
           wx.onMenuShareTimeline({
             title: `${vm.article.title}【深大官微】`,
-            link: `https://iszu.cn/board/${vm.article._id}`,
+            link: `${config.root}board/${vm.article._id}`,
             imgUrl,
             success: () => ga('send', 'event', 'board', 'share', 'timeline')
           })
 
           wx.onMenuShareAppMessage({
             title: `${vm.article.title}【深大官微】`,
-            link: `https://iszu.cn/board/${vm.article._id}`,
+            link: `${config.root}/board/${vm.article._id}`,
             desc,
             imgUrl,
             success: () => ga('send', 'event', 'board', 'share', 'app-message')
@@ -169,7 +170,7 @@
 
           wx.onMenuShareQQ({
             title: `${vm.article.title}【深大官微】`,
-            link: `https://iszu.cn/board/${vm.article._id}`,
+            link: `${config.root}board/${vm.article._id}`,
             desc,
             imgUrl,
             success: () => ga('send', 'event', 'board', 'share', 'qq')
