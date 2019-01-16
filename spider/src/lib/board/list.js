@@ -39,7 +39,7 @@ function parseList (response) {
     articles.push({
       id: $(el).find('> td:nth-child(4) a').attr('href').substr(12),
       type: articleTypeTable[$(el).find('> td:nth-child(2)').text().trim()],
-      sticky: !!$(el).find('> td:nth-child(4) > b').text()
+      sticky: !!$(el).find('> td:nth-child(4) > font').text()
     })
   })
 
