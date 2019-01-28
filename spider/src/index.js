@@ -33,7 +33,7 @@ async function updateList () {
         // 把 type, sticky, lecture 属性加到数据中
         Object.assign(data, item, { lecture: lectureRegex.test(data.title) })
         await Article.findByIdAndUpdate(item.id, { $set: data }, { upsert: true })
-      } else if (!item.sticky) break
+      } else if (!item.sticky) continue
     } catch (e) {
       // TODO: 增加报警
       console.error(e.stack)
