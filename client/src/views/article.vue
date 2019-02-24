@@ -100,7 +100,7 @@
         if (result.success) {
           this.headerHeight = 0
           this.article = result.data
-
+          this.article.title.replace(/&nbsp;/g, ' ')
           this.setRead()
           this.$nextTick(this.adjustTables)
           ga('send', 'event', 'board', 'view', this.article._id)
