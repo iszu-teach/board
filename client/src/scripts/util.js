@@ -1,6 +1,6 @@
 'use strict'
 
-const articleTypeTable = ['教务', '学术', '行政', '学工', '校园', '生活', '讲座']
+const articleTypeTable = ['教务', '学术', '行政', '学工', '生活', '讲座']
 
 /**
  * 查询文章类型

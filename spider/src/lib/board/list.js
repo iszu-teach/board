@@ -9,8 +9,7 @@ const articleTypeTable = {
   '学术': 1,
   '行政': 2,
   '学工': 3,
-  '校园': 4,
-  '生活': 5
+  '生活': 4
 }
 
 function parseList (response) {
